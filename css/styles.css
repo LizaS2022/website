@@ -22,8 +22,8 @@ html {
 }
 
 body {
-    font-family: Inter, arial,Arial, Helvetica, sans-serif;
     color: var(--color-body);
+    font-family: Inter, arial,Arial, Helvetica, sans-serif;
     font-size: 2.4rem;
     line-height: 1.5;
 }
@@ -118,8 +118,8 @@ p {
     }
 
     .badge--small {
-        font-size:1.6rem;
-        padding:0.5rem 1.5rem;
+        font-size: 1.6rem;
+        padding: 0.5rem 1.5rem;
     }
 
     @media screen and (min-width: 1024px) {
@@ -196,13 +196,13 @@ margin-right: 2rem;
     align-items: center;
 }
 
-.icon-container-accent {
+.icon-container--accent {
     background-color: var(--color-accent);
 }
 
 /* Buttons */
 
-.btn{
+.btn {
    
     border-radius:40px;
     border: 0;
@@ -215,7 +215,6 @@ margin-right: 2rem;
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
-    
 }
 
 .btn--primary {
@@ -320,7 +319,8 @@ background: #3a8ffd;
     overflow: hidden;
 }
 
-.card__header, .card__body {
+.card__header, 
+.card__body {
     padding:2rem 3rem;
 }
 
@@ -436,18 +436,18 @@ background: #3a8ffd;
 }
 
 .quote__author {
-    font-weight: 500;
     font-size: 3rem;
-    font-style: normal;;
+    font-style: normal;
+    font-weight: 500;
     margin-bottom: 0;
 }
 
 .quote__organizaion {
-    font-weight: 400;
-    font-size: 2rem;
-    opacity: .4;
     color: var(--color-headings);
+    font-size: 2rem;
     font-style: normal;
+    font-weight: 400;
+    opacity: .4;
 }
 
 
@@ -495,6 +495,7 @@ background: #3a8ffd;
 
 .testimonial__image {
     position:relative;
+    margin: 0 3rem;
 }
 
 .testimonial__image > img{
@@ -509,13 +510,13 @@ background: #3a8ffd;
 
 @media screen and (min-width:768px) {
 .testimonial .quote,
-.testimonial.quote__author,
- {
+.testimonial .quote__author {
     font-size: 2.4;
 }
 
 .testimonial .quote {
     margin-left: 6rem;
+    margin-right: 0;
 }
 
 }
@@ -552,7 +553,7 @@ background: #3a8ffd;
     .callout .grid--1x2 {
         grid-template-columns: 1fr auto;
     }
-    
+
     .callout__content {
         text-align: left;
     }
@@ -561,4 +562,38 @@ background: #3a8ffd;
         justify-self:start;
         margin:0 2rem;
     }
+}
+
+/* Collapsibles */
+
+.collapsible__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.collapsible__heading {
+    margin-top: 0;
+    font-size: 3rem;
+}
+
+.collapsible__chevron {
+    transform: rotate(-90deg);
+    transition: transform 0.3s;
+}
+
+.collapsible__content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+    
+}
+
+.collapsible--expanded .collapsible__chevron {
+    transform: rotate(0);
+}
+
+.collapsible--expanded .collapsible__content {
+    max-height:100vh;
+    opacity: 1;
 }
