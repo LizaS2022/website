@@ -603,7 +603,10 @@ background: #3a8ffd;
 .block {
     --padding-vertical: 6rem;
     padding:var(--padding-vertical) 2rem;
-    border: 2px solid red;
+    text-align: center;
+}
+
+.block__header {
     text-align: center;
 }
 
@@ -628,4 +631,9 @@ background: #3a8ffd;
 .block--skewed-left {
     padding-bottom: calc(var(--padding-vertical) + 4rem);
     clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+}
+
+.container {
+    max-width: 1140px;
+    margin: o auto;
 }
